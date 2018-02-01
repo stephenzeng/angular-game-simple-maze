@@ -1,0 +1,18 @@
+<div class="row" style="padding: 15px;">
+  <div class="col-lg">
+    <table>
+      <tr *ngFor="let row of mazeGrid">
+        <td *ngFor="let node of row" [ngClass]="node.isBlocked ? 'blocked' : (node.isSelected ? 'selected' : '')"
+        (click)="onCellClicked(node)"></td>
+      </tr>
+    </table>
+  </div>
+  <div class="col-lg">
+    <div>
+      <button type="button" class="btn btn-dark" (click)="onResetClicked()">Reset</button>
+    </div>
+    <div>
+      <button type="button" class="btn btn-dark" (click)="onShowResultClicked()">Show me the path</button>
+    </div>
+  </div>
+</div>
